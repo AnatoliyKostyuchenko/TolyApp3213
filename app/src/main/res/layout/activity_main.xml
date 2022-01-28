@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/bottom1"
+        android:id="@+id/bottomQuest"
         style="@style/Widget.MaterialComponents.TimePicker.Button"
         android:layout_width="0dp"
         android:layout_height="74dp"
@@ -21,7 +21,7 @@
         android:textSize="50dp"
         android:textColor="@color/black"
         android:textStyle="normal"
-        app:layout_constraintBottom_toTopOf="@+id/bottom4"
+        app:layout_constraintBottom_toTopOf="@+id/bottomSettings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -29,7 +29,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/bottom4"
+        android:id="@+id/bottomSettings"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="0dp"
         android:layout_height="74dp"
@@ -40,15 +40,15 @@
         android:textColor="@color/black"
         android:textSize="50dp"
         app:iconTint="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintBottom_toTopOf="@+id/buttonRating"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bottom1"
+        app:layout_constraintTop_toBottomOf="@+id/bottomQuest"
         app:rippleColor="@color/black"
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonRating"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="0dp"
         android:layout_height="74dp"
@@ -61,11 +61,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bottom4"
+        app:layout_constraintTop_toBottomOf="@+id/bottomSettings"
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/buttonCreators"
         style="@style/Widget.MaterialComponents.TimePicker.Button"
         android:layout_width="428dp"
         android:layout_height="79dp"
@@ -79,7 +79,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.588"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRating"
         app:layout_constraintVertical_bias="0.338"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,39 +2,46 @@ package com.stortor.tolyapp;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;
+import java.io.Serializable;
 
 public class MainActivity extends Activity {
-    private Button button1;
-    private Button button2;
-    private Button button3;
-    private Button button5;
+    private Button bottomQuest;
+    private Button bottomSettings;
+    private Button buttonRating;
+    private Button buttonCreators;
+    private MediaPlayer mediaPlayer;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.dragon);
+        mediaPlayer.start();
 
-        button1 = (Button) findViewById(R.id.bottom1);
-        button1.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+        bottomQuest = (Button) findViewById(R.id.bottomQuest);
+        bottomQuest.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, QuestActivity.class);
             startActivity(intent);
         });
-        button2 = (Button) findViewById(R.id.bottom4);
-        button2.setOnClickListener(view ->{
-            Intent intent = new Intent(MainActivity.this,MainActivity3.class);
+        bottomSettings = (Button) findViewById(R.id.bottomSettings);
+        bottomSettings.setOnClickListener(view ->{
+            Intent intent = new Intent(MainActivity.this, SettingActivity.class);
+//            intent.putExtra("song", String.valueOf(mediaPlayer));
             startActivity(intent);
         } );
-        button3 = (Button) findViewById(R.id.button3);
-        button3.setOnClickListener(view ->{
-            Intent intent = new Intent(MainActivity.this,MainActivity4.class);
+        buttonRating = (Button) findViewById(R.id.buttonRating);
+        buttonRating.setOnClickListener(view ->{
+            Intent intent = new Intent(MainActivity.this, RatingActivity.class);
             startActivity(intent);
         } );
-        button5 = (Button) findViewById(R.id.button5);
-        button5.setOnClickListener(view ->{
-            Intent intent = new Intent(MainActivity.this,MainActivity5.class);
+        buttonCreators = (Button) findViewById(R.id.buttonCreators);
+        buttonCreators.setOnClickListener(view ->{
+            Intent intent = new Intent(MainActivity.this,CreatorsActivity.class);
             startActivity(intent);
         } );
     }
