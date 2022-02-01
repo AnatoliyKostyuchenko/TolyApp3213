@@ -3,18 +3,20 @@ package com.stortor.tolyapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.widget.Button;
 
 import java.io.Serializable;
 
-public class MainActivity extends Activity {
-    private Button bottomQuest;
-    private Button bottomSettings;
-    private Button buttonRating;
-    private Button buttonCreators;
+public class MainActivity extends Activity implements SoundPool.OnLoadCompleteListener {
+    public Button bottomQuest;
+    public Button bottomSettings;
+    public Button buttonRating;
+    public Button buttonCreators;
     private MediaPlayer mediaPlayer;
+    public MediaPlayer mediaPlayer1;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.dragon);
         mediaPlayer.start();
+        mediaPlayer1 = MediaPlayer.create(getApplicationContext(),R.raw.listanie);
 
         bottomQuest = (Button) findViewById(R.id.bottomQuest);
         bottomQuest.setOnClickListener(view -> {
@@ -31,7 +34,6 @@ public class MainActivity extends Activity {
         bottomSettings = (Button) findViewById(R.id.bottomSettings);
         bottomSettings.setOnClickListener(view ->{
             Intent intent = new Intent(MainActivity.this, SettingActivity.class);
-//            intent.putExtra("song", String.valueOf(mediaPlayer));
             startActivity(intent);
         } );
         buttonRating = (Button) findViewById(R.id.buttonRating);
@@ -44,5 +46,10 @@ public class MainActivity extends Activity {
             Intent intent = new Intent(MainActivity.this,CreatorsActivity.class);
             startActivity(intent);
         } );
+    }
+
+    @Override
+    public void onLoadComplete(SoundPool soundPool, int i, int i1) {
+
     }
 }
